@@ -120,13 +120,12 @@
     }
 
     url = window.location.href;
-    if(url.includes('http://localhost:9090/pharmacies/home?namePharmacy=')) {
+    if(url.includes('/pharmacies/home?namePharmacy=')) {
         xhr = new XMLHttpRequest();
-        xhr.open('get', 'http://localhost:9090/pharmacies/api/findByName?namePharmacy='
+        xhr.open('get', '/pharmacies/api/findByName?namePharmacy='
             +getParameterByName('namePharmacy'));
 
         xhr.onreadystatechange=function() {
-            //let data;
             if (xhr.readyState === 4 && xhr.status === 200) {
                 let data = xhr.response;
                 for (let i = 0; i < data.length; i++) {
@@ -144,13 +143,13 @@
         xhr.send();
 
     }
-    else if(url.includes('http://localhost:9090/pharmacies/home?idMunicipality=')) {
+    else if(url.includes('/pharmacies/home?idMunicipality=')) {
         xhr = new XMLHttpRequest();
-        xhr.open('get', 'http://localhost:9090/pharmacies/api/findByName?namePharmacy='
+        xhr.open('get', '/pharmacies/api/findByName?namePharmacy='
             +getParameterByName('namePharmacy'));
 
         xhr.onreadystatechange=function() {
-            //let data;
+
             if (xhr.readyState === 4 && xhr.status === 200) {
                 let data = xhr.response;
                 for (let i = 0; i < data.length; i++) {
@@ -167,11 +166,11 @@
         xhr.responseType = 'json';
         xhr.send();
         xhr = new XMLHttpRequest();
-        xhr.open('get', 'http://localhost:9090/pharmacies/api/findByMunicipality?idMunicipality='
+        xhr.open('get', '/pharmacies/api/findByMunicipality?idMunicipality='
             +getParameterByName('idMunicipality'));
 
         xhr.onreadystatechange=function() {
-            //let data;
+
             if (xhr.readyState === 4 && xhr.status === 200) {
                 let data = xhr.response;
                 for (let i = 0; i < data.length; i++) {
